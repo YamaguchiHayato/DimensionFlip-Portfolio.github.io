@@ -1,5 +1,5 @@
 # DimensionFlip 
-## 河原電子ビジネス専門学校 ゲームクリエイター科2年 山口 隼 (やまぐち はやと) 27卒
+## 河原電子ビジネス専門学校 ゲームクリエイター科2年 <br>山口 隼 (やまぐち はやと) 27卒</br>
 ![alt text](title.png)
 # 目次
 ## 1. [作品概要](#作品概要)
@@ -83,5 +83,14 @@
 
 ---
 ## リンク
-* **Youtube** 'https://youtu.be/g3JOp4OgxHA'
-* **GitHub**  'https://github.com/YamaguchiHayato/Dimensional-Flip'
+* **Youtube** <a href="https://youtu.be/g3JOp4OgxHA" target="_blank">https://youtu.be/g3JOp4OgxHA</a>
+
+* **GitHub**  <a href="https://github.com/YamaguchiHayato/Dimensional-Flip" target= "_blank"> https://github.com/YamaguchiHayato/Dimensional-Flip </a>
+ 
+
+
+ 
+
+
+
+
