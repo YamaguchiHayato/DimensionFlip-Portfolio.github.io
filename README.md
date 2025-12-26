@@ -80,3 +80,8 @@
 ## . 今後の展望
 * **演出面の強化 (UX向上)**: カメラワークを通じてユーザーに「視点切替のタイミング」を直感的に伝える演出を導入します。
 * **レベルデザインの完遂**: 1つのステージとしての完成度を高めるため、ボス戦のロジック構築に注力します。
+
+---
+## リンク
+* **Youtube** 'https://youtu.be/g3JOp4OgxHA'
+* **GitHub**  'https://github.com/YamaguchiHayato/Dimensional-Flip'
