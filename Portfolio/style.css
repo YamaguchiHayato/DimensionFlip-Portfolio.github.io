@@ -1,0 +1,40 @@
+body {
+  font-family: "Georgia", "Times New Roman", serif;
+  
+  /* ▼ 画像の上に「半透明の黒い幕」を重ねて、文字を読みやすくする */
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("Portfolio_Sprite/BackGround.png");
+  
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* ▼ 基本の文字色（読みやすい明るい白） */
+  color: #f0f8ff; 
+  
+  padding: 2rem;
+  line-height: 1.9;
+  
+  /* 文字の影（黒く縁取ってさらに読みやすく） */
+  text-shadow: 
+    2px 2px 0px #000000, 
+    -1px -1px 0px #000000,
+    1px -1px 0px #000000,
+    -1px 1px 0px #000000,
+    1px 1px 0px #000000;
+}
+
+/* ▼ 見出し（# の部分）だけ色を変えて目立たせる */
+h1, h2, h3, h4, h5, h6 {
+  color: #00ffff; /* サイバー感のある水色 */
+  text-shadow: 0 0 10px #0088aa; /* ぼんやり光らせる */
+  border-bottom: 2px solid #00ffff; /* 下線を引く */
+  padding-bottom: 5px;
+}
+
+/* ▼ リンクの色も調整 */
+a {
+  color: #ffcc00; /* 金色っぽい黄色 */
+}
