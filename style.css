@@ -26,12 +26,14 @@ body {
     1px 1px 0px #000000;
 }
 
-/* ▼ 見出し（# の部分）だけ色を変えて目立たせる */
+/* ▼ 見出し（# の部分）の設定 */
 h1, h2, h3, h4, h5, h6 {
-  color: #00ffff; /* サイバー感のある水色 */
-  text-shadow: 0 0 10px #0088aa; /* ぼんやり光らせる */
-  border-bottom: 2px solid #00ffff; /* 下線を引く */
-  padding-bottom: 5px;
+  color: #00ffff;                 /* 文字を水色にする */
+  text-shadow: 0 0 10px #0088aa;  /* 文字をぼんやり光らせる */
+  padding-bottom: 5px;            /* 下の余白 */
+  
+  /* ▼ 元の線を消す設定 */
+  border-bottom: none;
 }
 
 /* ▼ リンクの全状態（未訪問・訪問済・クリック中）を一括で変更 */
