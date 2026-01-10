@@ -17,8 +17,8 @@
 ### &emsp; 5-1[StrategyPattern](#StrategyPattern)
 ### &emsp; 5-2[FactoryPattern](#FactoryPattern)
 ### 6. [その他使用技術](#その他使用技術)
-### &emsp; 6-1[StatePattern](#statepattern)
-### &emsp; 6-2[SingletonPatter](#singletonpattern)
+### &emsp; 6-1[StatePattern](#Statepattern)
+### &emsp; 6-2[SingletonPatter](#singletonPattern)
 ### 7. [今後の展望](#今後の展望)
 ### 8. [リンク集](#リンク)
 <br>
@@ -48,11 +48,16 @@
 ## ステージの最奥。 アナタを待つものとは一体！？
 ---
 <br>
+
 # 操作方法
 
 <img src = "Portfolio_Sprite/howToPlay.png" >
 
 <br>
+
+---
+
+
 # カメラについて
 
 ![alt text](Portfolio_Sprite\Camera.png)
@@ -62,6 +67,7 @@
   ##  &ensp; &ensp; 斜面の計算にも対応し、進行につれ上がる視覚を追従するように実装。
 
 <br>
+
 # 技術説明
 
 
@@ -96,12 +102,15 @@
 <br>
 
 ## その他使用技術
-* ## SingletonPattern: アクセスポイントを提供し呼び出し元を1つに統一しました。
+# SingletonPattern: 
+  ##  アクセスポイントを提供し呼び出し元を1つに統一しました。
   ##  主に何か共通の処理をまとめるマネージャクラスに適応。
 
 <br> 
-# ステートパターン: 
-   ##  Playerクラス・Enemyクラスに適応。(カメラクラスにも適応できたが、あえてStrategyを選択)
+
+# StatePattern: 
+   ##  Playerクラス・Enemyクラスに適応。
+   ##  &ensp; → カメラクラスにも適応できたが、あえてStrategyを選択
    ##  &ensp; → 特に処理が複雑なクラスのため適応。
    ##  &emsp; &ensp; 両クラスでは複雑な処理が多い上にメンテナンス性も確保できない。
    ##  &emsp; &ensp; そこで StatePattern を適応することで状態ごとに振る舞いを切り替え、
