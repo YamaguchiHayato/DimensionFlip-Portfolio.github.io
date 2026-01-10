@@ -1,27 +1,4 @@
-<style>
-body {
-  font-family: "Georgia", "Times New Roman", serif;
-  
-  /* ▼ 画像パスを指定 */
-  background-image: url("Portfolio_Sprite/BackGround.png");
-  
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  
-  color: #ffffff;
-  padding: 2rem;
-  line-height: 1.9;
-  
-  text-shadow: 
-    2px 2px 0px #000000, 
-    -1px -1px 0px #000000,
-    1px -1px 0px #000000,
-    -1px 1px 0px #000000,
-    1px 1px 0px #000000;
-}
-</style>
+<link rel="stylesheet" href="style.css">
 
 # DimensionFlip 
 ## 河原電子ビジネス専門学校 ゲームクリエイター科2年 <br>山口 隼 (やまぐち はやと) 27卒
