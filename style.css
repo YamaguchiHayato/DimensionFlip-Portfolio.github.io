@@ -34,7 +34,16 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 5px;
 }
 
-/* ▼ リンクの色も調整 */
-a {
-  color: #ffcc00; /* 金色っぽい黄色 */
+/* ▼ リンクの全状態（未訪問・訪問済・クリック中）を一括で変更 */
+a, a:link, a:visited, a:active {
+  color: #00ffff; /* ここを水色に固定 */
+  text-decoration: none; /* 下線なし */
+}
+
+/* ▼ マウスを乗せたときのアニメーション */
+a:hover {
+  color: #ffffff; /* 白く光る */
+  text-decoration: underline; /* 下線を出す */
+  text-shadow: 0 0 8px #00ffff; /* ふわっと光らせる */
+  transition: 0.2s;
 }

@@ -24,8 +24,6 @@ body {
 </style>
 
 # DimensionFlip 
-...
-# DimensionFlip 
 ## 河原電子ビジネス専門学校 ゲームクリエイター科2年 <br>山口 隼 (やまぐち はやと) 27卒</br>
 
 <img src="Portfolio_Gif\titleAction.gif" width="100%" alt="デモ映像">
@@ -60,21 +58,21 @@ body {
 <br></br>
 
 # ゲーム内容
-<img src="Portfolio_Gif\PV.gif" width="100%" alt="デモ映像">
+<video src="Portfolio_Video/PV.mp4" width="100%" autoplay loop muted playsinline></video>
 
-## gif.2 ゲームPV
+## mp4.1 ゲームPV
 ## 時には2D、またある時には3D。<br>カメラの視点を回してステージを突き進もう。</br> カメラの使い方はアナタ次第!! <br>はたしてあなたはどう回す!?
 
 <img src="Portfolio_Gif\BossCutIn.gif" width="100%" alt="デモ映像">
 
-## gif.3 ボスの登場カットイン
+## gif.2 ボスの登場カットイン
 
 ## ステージの最奥。 アナタを待つものとは一体！？
 ---
 <br></br>
 # 操作方法
 
-![alt text](howToPlay.png)
+<img src = "Portfolio_Sprite/howToPlay.png" >
 
 <br></br>
 # カメラについて
@@ -124,8 +122,8 @@ body {
   ##  主に何か共通の処理をまとめるマネージャクラスに適応。
 
 <br> </br>
-## ステートパターン: 
-*  ##  Playerクラス・Enemyクラスに適応。(カメラクラスにも適応できたが、あえてStrategyを選択)
+# ステートパターン: 
+   ##  Playerクラス・Enemyクラスに適応。(カメラクラスにも適応できたが、あえてStrategyを選択)
    ##  &ensp; → 特に処理が複雑なクラスのため適応。
    ##  &emsp; &ensp; 両クラスでは複雑な処理が多い上にメンテナンス性も確保できない。
    ##  &emsp; &ensp; そこで StatePattern を適応することで状態ごとに振る舞いを切り替え、
