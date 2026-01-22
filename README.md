@@ -122,8 +122,9 @@
 * ## ボス戦の改修
   ##  &ensp; → アクション面や演出面を改修。
   ##  &emsp; &ensp; 既存の実装方式ではコア体験のカメラアクションを用いたボス戦として未発揮状態。
-  ##  &emsp; &ensp; ObserverPatternを用いた当たり判定の切り替えや
-  ##  &emsp; &ensp; ゲームとしてエンタメ性を出すためにスタッフロールを実装予定。
+  ##  &emsp; &ensp; 2周目以降のユーザをターゲットにステージ選択画面の実装。
+  ##  &emsp; &ensp; 他にもキャラクターモデルをUVアニメーションで動かしたり,
+  ##  &emsp; &emsp; インゲームだけでなくアウトゲームでも力を入れていきたいと考えています。
 
 ---
 ## リンク
@@ -135,6 +136,12 @@
 * **GitHub**  <a href="https://github.com/YamaguchiHayato/Dimensional-Flip" target= "_blank"> https://github.com/YamaguchiHayato/Dimensional-Flip </a>
 
 * **Portfolio**  <a href="https://yamaguchihayato.github.io/DimensionFlip-Portfolio.github.io/" target= "_blank"> https://yamaguchihayato.github.io/DimensionFlip-Portfolio.github.io/ </a>
+
+
+## 宛先
+### 学校法人河原学園 河原電子ビジネス専門学校 ゲームクリエイター科 ゲームコース3年制
+### 2年 山口 隼
+* CAO1244029@st.kawahara.ac.jp
 
 
 
