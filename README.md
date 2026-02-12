@@ -1,9 +1,9 @@
 <link rel="stylesheet" href="style.css">
 
+
 # DimensionFlip 
 ## 河原電子ビジネス専門学校 ゲームクリエイター科2年 <br>山口 隼 (やまぐち はやと) 27卒
 
-<img src="Portfolio_Gif\titleAction.gif" width="100%" alt="デモ映像">
 
 ## gif.1 タイトル画面。
 <br>
@@ -36,12 +36,10 @@
 <br>
 
 # ゲーム内容
-<video src="Portfolio_Video/PV.mp4" width="100%" autoplay loop muted playsinline></video>
-
-## mp4.1 ゲームPV
+<img src = "Portfolio_Sprite/title.png" >
 ## 時には2D、またある時には3D。<br>カメラの視点を回してステージを突き進もう。 カメラの使い方はアナタ次第!! <br>はたしてあなたはどう回す!?
 
-<img src="Portfolio_Gif\BossCutIn.gif" width="100%" alt="デモ映像">
+<img src = "Portfolio_Sprite/CutIn.png" >
 
 ## gif.2 ボスの登場カットイン
 
@@ -119,12 +117,28 @@
 <br>
 
 ## 今後の展望
+* ## 作品全体の質を上げる
+  ## &ensp; ステージの改修
+  ## &ensp; ギミックの追加
+  ## &ensp; ボス戦の改修
+  ## &ensp; ステージ選択画面の実装
+
+<br>
+
 * ## ボス戦の改修
-  ##  &ensp; → アクション面や演出面を改修。
-  ##  &emsp; &ensp; 既存の実装方式ではコア体験のカメラアクションを用いたボス戦として未発揮状態。
-  ##  &emsp; &ensp; 2周目以降のユーザをターゲットにステージ選択画面の実装。
-  ##  &emsp; &ensp; 他にもキャラクターモデルをUVアニメーションで動かしたり,
-  ##  &emsp; &emsp; インゲームだけでなくアウトゲームでも力を入れていきたいと考えています。
+  ##  &ensp; 2D/3D視点を行き来する本作品らしさを追求。
+  ##  &ensp; 細部にもめを配り作品を追求していきたい。
+
+<br>
+
+* ## ステージの改修
+  ## 視認性にもこだわった視点を回す楽しさを体験できるようなステージ
+
+<br>
+
+* ## ステージ選択画面の実装
+  ## &ensp; どのステージからでも始められるように。
+
 
 ---
 ## リンク
@@ -139,9 +153,9 @@
 
 
 ## 宛先
-### 学校法人河原学園 河原電子ビジネス専門学校 ゲームクリエイター科 ゲームコース3年制
+### 学校法人河原学園 河原電子ビジネス専門学校 ゲームクリエイター科 ゲームコース 3年制
 ### 2年 山口 隼
-* CAO1244029@st.kawahara.ac.jp
+* 学内アドレス: CA01244029@st.kawahara.ac.jp
 
 
 
