@@ -4,6 +4,7 @@
 # DimensionFlip 
 ## 河原電子ビジネス専門学校 ゲームクリエイター科2年 <br>山口 隼 (やまぐち はやと) 27卒
 
+<img src = "Portfolio_Gif\titleAction.gif" >
 
 ## gif.1 タイトル画面。
 <br>
@@ -36,10 +37,12 @@
 <br>
 
 # ゲーム内容
-<img src = "Portfolio_Sprite/title.png" >
+<img src = "Portfolio_Gif/Tutorial.gif" >
+
 ## 時には2D、またある時には3D。<br>カメラの視点を回してステージを突き進もう。 カメラの使い方はアナタ次第!! <br>はたしてあなたはどう回す!?
 
-<img src = "Portfolio_Sprite/CutIn.png" >
+
+<img src = "Portfolio_Gif\BossCutIn.gif" >
 
 ## gif.2 ボスの登場カットイン
 
