@@ -119,6 +119,9 @@
 ---
 <br>
 
+## 今後の展望
+* ## ゲームバランスを意識した複数人で対戦が出来るアクションゲームのチーム開発を行います。
+<br>
 
 ---
 ## リンク
@@ -131,6 +134,7 @@
 
 * **Portfolio**  <a href="https://yamaguchihayato.github.io/DimensionFlip-Portfolio.github.io/" target= "_blank"> https://yamaguchihayato.github.io/DimensionFlip-Portfolio.github.io/ </a>
 
+* **ROM** <a href="https://drive.google.com/file/d/1wA01RpSKpDIp1yL_sSOJwel9cVUqhps/view?usp=sharing" target="_blank">ダウンロードはこちら</a>
 
 ## 宛先
 ### 学校法人河原学園 河原電子ビジネス専門学校 ゲームクリエイター科 ゲームコース 3年制
