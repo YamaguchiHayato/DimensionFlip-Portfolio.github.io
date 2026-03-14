@@ -4,7 +4,7 @@
 # DimensionFlip 
 ## 河原電子ビジネス専門学校 ゲームクリエイター科2年 <br>山口 隼 (やまぐち はやと) 27卒
 
-<img src = "Portfolio_Gif\titleAction.gif" >
+<img src = "Portfolio_Gif\titleAction_ver20260304.gif" >
 
 ## gif.1 タイトル画面。
 <br>
@@ -12,6 +12,8 @@
 # 目次
 ### 1. [作品概要](#作品概要)
 ### 2. [ゲーム内容](#ゲーム内容)
+### &emsp; 2-2 [ゲームの流れ](#ゲームの流れ)        
+### &emsp; 2-3 [各ステージについて](#2-3-各ステージについて)
 ### 3. [操作説明](#操作説明)
 ### 4. [カメラについて](#カメラについて)
 ### 5. [技術説明](#技術説明)
@@ -42,12 +44,56 @@
 ## 時には2D、またある時には3D。<br>カメラの視点を回してステージを突き進もう。 カメラの使い方はアナタ次第!! <br>はたしてあなたはどう回す!?
 
 
+
 <img src = "Portfolio_Gif\BossCutIn.gif" >
 
 ## gif.2 ボスの登場カットイン
 
 ## ステージの最奥。 アナタを待つものとは一体！？
 ---
+<br>
+
+<br>
+
+# ゲームの流れ
+
+<video src="./Portfolio_Video\titleAction_StageSelectScene.mp4" controls width="100%"></video>
+
+## video.1 タイトルアクション操作
+## タイトルには3つの操作ができます。　
+## GameStart を押すとステージ選択画面に遷移することができ遊びたいステージを選択することができます。
+## Manual は操作説明です。　本作品はチュートリアルで操作説明はしていますが、タイトル画面からも確認できるように実装しました。
+## GameEnd はゲームを終了できます。　逐一右上の✖を押してウィンドウを閉じるのはストレスになると思ったkらです。
+## 少し細かいですが、画面下部には権利クレジットとVersion表記を記載しています。
+## これはより「ゲームっぽさ」を表現するために記載を行いました。
+ 
+<br>
+
+# 各ステージについて
+
+<img src = "Portfolio_Sprite\StageSelectScene.png">
+
+## ステージの種類は3種類あります。
+## TutorialStage, Stage1(NormalStage), BossStageです。
+## ここからは Tutorial, Normal, Bossと表記します。
+
+<br>
+
+## Tutorialではゲーム全体の流れと遊び方を学ぶことができます。
+<video src = "./Portfolio_Video\PlayTutorialStage.mp4" controls width = "100%"></video>
+
+<br>
+
+## Normalでは実際にギミックや視点切替を行いながらステージを進んでいく必要があります。
+## また、敵も出現するため、カメラを切り替えるタイミングが重要になってきます。
+<video src = "./Portfolio_Video\PlayNormalStage.mp4" controls width = "100%"></video>
+
+<br>
+
+## Bossではカメラを切り替えながら、攻撃を避け、ボスに攻撃を与える必要があります。
+## ボス戦の攻略チャートは別でアップロードしています。　
+* ** ボス戦のチャートはこちらになります ** <a href="https://youtu.be/FVOEsfokTfM?si=VaxhHGj84BB05cHO" target="_blank">https://youtu.be/FVOEsfokTfM?si=VaxhHGj84BB05cHO</a>
+
 <br>
 
 # 操作方法
@@ -60,6 +106,10 @@
 
 
 # カメラについて
+
+
+
+
 
 ![alt text](Portfolio_Sprite\Camera.png)
 <br>
@@ -120,7 +170,8 @@
 <br>
 
 ## 今後の展望
-* ## ゲームバランスを意識した複数人で対戦が出来るアクションゲームのチーム開発を行います。
+* ## ステージ選択画面で各ステージのアイコンモデルを作成し、ステージを選択する際重ならないようにします。
+* ## ボス戦のガイドも作成予定です。
 <br>
 
 ---
@@ -134,7 +185,9 @@
 
 * **Portfolio**  <a href="https://yamaguchihayato.github.io/DimensionFlip-Portfolio.github.io/" target= "_blank"> https://yamaguchihayato.github.io/DimensionFlip-Portfolio.github.io/ </a>
 
-* **ROM** <a href="https://drive.google.com/file/d/1wA01RpSKpDIp1yL_sSOJwel9cVUqhps/view?usp=sharing" target="_blank">ダウンロードはこちら</a>
+* **ROM** <a href="https://drive.google.com/file/d/1wA01RpSKpDIp1yL_sSOlJwel9cVUqhps/view?usp=drive_link" target="_blank">ダウンロードはこちら</a>
+
+* **Google ドライブ** <a href = https://drive.google.com/drive/u/1/home target = "https://drive.google.com/drive/u/1/home">こちらからアクセスできます</a>
 
 ## 宛先
 ### 学校法人河原学園 河原電子ビジネス専門学校 ゲームクリエイター科 ゲームコース 3年制
