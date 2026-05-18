@@ -1,202 +1,438 @@
 <link rel="stylesheet" href="style.css">
 
+# DimensionFlip  
+## 2D視点と3D視点を切り替えて進むアクションゲーム
 
-# DimensionFlip 
-## 河原電子ビジネス専門学校 ゲームクリエイター科2年 <br>山口 隼 (やまぐち はやと) 27卒
+<a href="Portfolio_Gif/titleAction_ver20260304.gif" target="_blank">
+<img src="Portfolio_Gif/titleAction_ver20260304.gif" width="100%" alt="DimensionFlip タイトル画面">
+</a>
 
-<img src = "Portfolio_Gif\titleAction_ver20260304.gif" >
+## gif.1 タイトル画面
 
-## gif.1 タイトル画面。
 <br>
 
 # 目次
-### 1. [作品概要](#作品概要)
-### 2. [ゲーム内容](#ゲーム内容)
-### &emsp; 2-2 [ゲームの流れ](#ゲームの流れ)        
-### &emsp; 2-3 [各ステージについて](#2-3-各ステージについて)
-### 3. [操作説明](#操作説明)
-### 4. [カメラについて](#カメラについて)
-### 5. [技術説明](#技術説明)
-### &emsp; 5-1[StrategyPattern](#StrategyPattern)
-### &emsp; 5-2[FactoryPattern](#FactoryPattern)
-### 6. [その他使用技術](#その他使用技術)
-### &emsp; 6-1[StatePattern](#Statepattern)
-### &emsp; 6-2[SingletonPatter](#singletonPattern)
-### 7. [今後の展望](#今後の展望)
-### 8. [リンク集](#リンク)
-<br>
 
-# 作品概要
-* ## 開発環境: <br>&emsp; Visual Studio 2022 ,<br>&emsp; GitHub, <br>&emsp; Fork<br>
-  
-* ## ジャンル: <br>&emsp;2次元（2D）と3次元（3D）のカメラ視点を動的に切り替えるアクションゲーム
-
-* ## 使用言語: <br>&emsp; C++ <br>
-* ## 対応ハード: <br>&emsp;PC Windows11 &emsp;Xbox系コントローラー<br>
-* ## プレイ人数: <br>&emsp; 1人 
-* ## 開発期間: <br>&emsp;2025年9月 〜 現在進行中<br>
----
-<br>
-
-# ゲーム内容
-<img src = "Portfolio_Gif/Tutorial.gif" >
-
-## 時には2D、またある時には3D。<br>カメラの視点を回してステージを突き進もう。 カメラの使い方はアナタ次第!! <br>はたしてあなたはどう回す!?
-
-
-
-<img src = "Portfolio_Gif\BossCutIn.gif" >
-
-## gif.2 ボスの登場カットイン
-
-## ステージの最奥。 アナタを待つものとは一体！？
----
-<br>
-
-<br>
-
-# ゲームの流れ
-
-<video src="./Portfolio_Video\titleAction_StageSelectScene.mp4" controls width="100%"></video>
-
-## video.1 タイトルアクション操作
-## タイトルには3つの操作ができます。　
-## GameStart を押すとステージ選択画面に遷移することができ遊びたいステージを選択することができます。
-## Manual は操作説明です。　本作品はチュートリアルで操作説明はしていますが、タイトル画面からも確認できるように実装しました。
-## GameEnd はゲームを終了できます。　逐一右上の✖を押してウィンドウを閉じるのはストレスになると思ったkらです。
-## 少し細かいですが、画面下部には権利クレジットとVersion表記を記載しています。
-## これはより「ゲームっぽさ」を表現するために記載を行いました。
- 
-<br>
-
-# 各ステージについて
-
-<img src = "Portfolio_Sprite\StageSelectScene.png">
-
-## ステージの種類は3種類あります。
-## TutorialStage, Stage1(NormalStage), BossStageです。
-## ここからは Tutorial, Normal, Bossと表記します。
-
-<br>
-
-## Tutorialではゲーム全体の流れと遊び方を学ぶことができます。
-<video src = "./Portfolio_Video\PlayTutorialStage.mp4" controls width = "100%"></video>
-
-<br>
-
-## Normalでは実際にギミックや視点切替を行いながらステージを進んでいく必要があります。
-## また、敵も出現するため、カメラを切り替えるタイミングが重要になってきます。
-
-<br>
-
-## Bossではカメラを切り替えながら、攻撃を避け、ボスに攻撃を与える必要があります。
-## ボス戦の攻略チャートは別でアップロードしています。　
-* ** ボス戦のチャートはこちらになります ** <a href="https://youtu.be/FVOEsfokTfM?si=VaxhHGj84BB05cHO" target="_blank">https://youtu.be/FVOEsfokTfM?si=VaxhHGj84BB05cHO</a>
-
-<br>
-
-# 操作方法
-
-<img src = "Portfolio_Sprite/howToPlay.png" >
+### 1. [プロフィール](#1プロフィール)
+### 2. [作品概要](#2作品概要)
+### 3. [制作形式と担当箇所](#3制作形式と担当箇所)
+### &emsp; 3-1. [制作形式](#3-1制作形式)
+### &emsp; 3-2. [担当箇所](#3-2担当箇所)
+### 4. [ゲームの特徴](#4ゲームの特徴)
+### &emsp; 4-1. [作品の核](#4-1作品の核)
+### &emsp; 4-2. [2D / 3D視点切り替えによる攻略](#4-2-2d--3d視点切り替えによる攻略)
+### &emsp; 4-3. [ステージ構成](#4-3ステージ構成)
+### 5. [操作方法](#5操作方法)
+### &emsp; 5-1. [基本操作](#5-1基本操作)
+### &emsp; 5-2. [推奨確認ルート](#5-2推奨確認ルート)
+### 6. [ゲーム進行とステージ紹介](#6ゲーム進行とステージ紹介)
+### &emsp; 6-1. [タイトルからステージ選択まで](#6-1タイトルからステージ選択まで)
+### &emsp; 6-2. [TutorialStage](#6-2tutorialstage)
+### &emsp; 6-3. [NormalStage](#6-3normalstage)
+### &emsp; 6-4. [BossStage](#6-4bossstage)
+### 7. [技術的工夫点](#7技術的工夫点)
+### &emsp; 7-1. [カメラ制御の設計](#7-1カメラ制御の設計)
+### &emsp; 7-2. [Strategy Patternによるカメラ処理の分離](#7-2strategy-patternによるカメラ処理の分離)
+### &emsp; 7-3. [Factory Patternによる敵生成処理の整理](#7-3factory-patternによる敵生成処理の整理)
+### &emsp; 7-4. [State Patternによる状態管理](#7-4state-patternによる状態管理)
+### &emsp; 7-5. [Singleton Patternによる管理クラスの統一](#7-5singleton-patternによる管理クラスの統一)
+### 8. [提出・確認情報](#8提出確認情報)
+### 9. [今後の展望](#9今後の展望)
+### 10. [リンク集](#10リンク集)
 
 <br>
 
 ---
 
+# 1.プロフィール
 
-# カメラについて
+* ## 氏名:
+  ## &emsp; 山口 隼（ヤマグチ ハヤト）
 
+* ## 所属:
+  ## &emsp; 河原電子ビジネス専門学校 ゲームクリエイター科 27卒
 
+* ## 希望職種:
+  ## &emsp; プログラマ
 
+* ## 強み:
+  ## &emsp; C++を用いたゲーム制作において、カメラ制御・状態管理・敵生成処理などを設計し、ゲームの仕組みを実装することを強みとしています。  
+  ## &emsp; 本作品では、2D視点と3D視点を切り替えるゲーム性を成立させるため、カメラ制御、ステージ進行、敵生成、プレイヤー制御を中心に実装しました。
 
+* ## Email:
+  ## &emsp; CA01244029@st.kawahara.ac.jp
 
-![alt text](Portfolio_Sprite\Camera.png)
-<br>
-  ##  カメラ本体を画面中央に配置しPlayerが追従ラインを上下した分だけ追従するように実装
-  ##  &ensp; → ステージ全体を見渡すことがき、ゲームとしての視認性を確保。
-  ##  &ensp; &ensp; 斜面の計算にも対応し、進行につれ上がる視覚を追従するように実装。
-
-<br>
-
-# 技術説明
-
-
-# StrategyPattern
-## 作品内での使用箇所 : 2D/3Dカメラの切り替えロジック
-
-## ■ 実装背景
-  ## 「カメラクラス」の肥大化を防ぐためです。
-  ##  &ensp; → 既存の設計では1つのクラスに機能のすべてのコードを記載しており、
-  ##  &emsp; &ensp; 可読性・保守性の観点から将来性がないと判断。
-  ##  &emsp; &ensp; そこでStrategyPatternの特徴「アルゴリズムの動的な切り替え」に着目し
-  ##  &emsp; &ensp; 2D/3D用カメラクラスを作成。 振る舞いとして実装を行うことが出来ました。
-  ##  &emsp; &ensp; また、メンテナンス性も向上。 片方のクラスを変更しても影響を受けないため、
-  ##  &emsp; &ensp; そのカメラ特有の機能を実装したいときに役立ちました。
----
-<br>
-
-# FactoryPattern
-## 作品内での使用箇所:  敵キャラクターの生成方式
-
-### ■ 実装背景
-  ##  「敵の種類」が増加するたびに増えるSwitch文コードの可読性向上のため。
-  ##  &ensp; → 敵の種類が増えるたびに SwitchCase文を多用し、コードが長くなってしまうと判断。
-  ##  &emsp; &ensp; また、そこに敵特有の初期化処理も増え、大きくなってしまうと判断。
-  ##  &emsp; &ensp; 既存の実装方法ではステージクラスにその処理を書きステージクラスが肥大化。
-  ##  &emsp; &ensp; そこでFactoryPatternを用い、生成の権利をFactoryクラスに譲渡。
-  ##  &emsp; &ensp; また、関数テーブルを用いることでSwitch文を廃止。 
-  ##  &emsp; &ensp; ステージクラスでは敵の種類と生成座標を指定するだけで生成が可能に。
-  ##  &emsp; &ensp; これより 疎結合化・実行速度の向上・コンパイル時の安全性の確保など。
-  ##  &emsp; &ensp; 様々な恩恵を獲することに成功。
----
-<br>
-
-## その他使用技術
-# SingletonPattern: 
-  ##  アクセスポイントを提供し呼び出し元を1つに統一しました。
-  ##  主に何か共通の処理をまとめるマネージャクラスに適応。
-
-<br> 
-
-# StatePattern: 
-   ##  Playerクラス・Enemyクラスに適応。
-   ##  &ensp; → カメラクラスにも適応できたが、あえてStrategyを選択
-   ##  &ensp; → 特に処理が複雑なクラスのため適応。
-   ##  &emsp; &ensp; 両クラスでは複雑な処理が多い上にメンテナンス性も確保できない。
-   ##  &emsp; &ensp; そこで StatePattern を適応することで状態ごとに振る舞いを切り替え、
-   ##  &emsp; &ensp; メンテナンス性の向上・迅速なデバッグ対応を行うことに成功。
----
-<br>
-
-## 今後の展望
-* ## ステージ選択画面で各ステージのアイコンモデルを作成し、ステージを選択する際重ならないようにします。
-* ## ボス戦のガイドも作成予定です。
 <br>
 
 ---
-## リンク
-* **Youtube** <a href="https://youtu.be/_fvf5sKiPTE?si=IzBmCe7CpZoNcOUo" target="_blank">https://youtu.be/g3JOp4OgxHA</a>
 
- * **過去作品(チーム制作)** <a href="https://youtu.be/8DWuriwGJ-k?si=JC8OAdokIJmdOh5m" target="_blank">https://youtu.be/8DWuriwGJ-k?si=JC8OAdokIJmdOh5m</a>
+# 2.作品概要
+
+* ## 作品名:
+  ## &emsp; DimensionFlip
+
+* ## ジャンル:
+  ## &emsp; 2D / 3D視点切り替えアクションゲーム
+
+* ## 使用言語:
+  ## &emsp; C++
+
+* ## 開発環境:
+  ## &emsp; Visual Studio 2022  
+  ## &emsp; 学内エンジン
+
+* ## 開発ツール:
+  ## &emsp; GitHub  
+  ## &emsp; Fork
+
+* ## 対応環境:
+  ## &emsp; Windows 11
+
+* ## 推奨操作:
+  ## &emsp; Xbox系コントローラー
+
+* ## キーボード操作:
+  ## &emsp; 対応
+
+* ## プレイ人数:
+  ## &emsp; 1人
+
+* ## 開発期間:
+  ## &emsp; 2025年9月 〜 現在進行中
+
+<br>
+
+---
+
+# 3.制作形式と担当箇所
+
+## 3-1.制作形式
+
+* ## 個人制作
+  ## &emsp; 企画、実装、ステージ構成、カメラ制御、敵生成、ポートフォリオ作成を担当しました。
+
+<br>
+
+## 3-2.担当箇所
+
+* ## 2D / 3D視点切り替えシステムの実装
+* ## カメラ制御の設計・実装
+* ## 視点切り替え許可エリアの管理
+* ## ステージ進行管理
+* ## プレイヤー制御
+* ## 敵キャラクターの生成処理
+* ## ステージごとの遷移処理
+* ## UI・操作説明・ポートフォリオ整理
+
+<br>
+
+---
+
+# 4.ゲームの特徴
+
+## 4-1.作品の核
+
+## DimensionFlipは、2D視点と3D視点を切り替えながらステージを進むアクションゲームです。
+
+## 2D視点では横スクロールに近い感覚で進行し、3D視点では奥行き方向への移動や回り込みが可能になります。
+
+## 本作品では、視点切り替えを単なるカメラ演出ではなく、移動ルートの発見・障害物の突破・敵回避に使うゲーム性として実装しました。
+
+<br>
+
+<img src="Portfolio_Gif/Tutorial.gif" width="100%" alt="2D / 3D視点切り替え">
+
+## gif.2 2D / 3D視点切り替えを使ったステージ進行
+
+<br>
+
+## 4-2.2D / 3D視点切り替えによる攻略
+
+## 2D視点では、奥行き方向の情報が制限されるため、ステージを横方向に進むアクションとして見せています。
+
+## 一方で、3D視点に切り替えることで、2D視点では分かりにくい奥行き方向のルートや回避経路を確認できます。
+
+## 想定している攻略体験は以下の通りです。
+
+* ## 2D視点では進みにくい場所を、3D視点で回り込む
+* ## 3D視点で地形の位置関係を確認し、2D視点でジャンプアクションを行う
+* ## 敵や障害物に対して、視点を切り替えて安全なルートを探す
+
+<br>
+
+## 4-3.ステージ構成
+
+## 本作品には、TutorialStage、NormalStage、BossStageの3種類のステージがあります。
+
+* ## TutorialStage:
+  ## &emsp; 基本操作とゲーム全体の流れを確認できます。
+
+* ## NormalStage:
+  ## &emsp; 2D / 3D視点切り替えを使ったステージ攻略を確認できます。
+
+* ## BossStage:
+  ## &emsp; 視点切り替えと戦闘を組み合わせた場面を確認できます。
+
+<br>
+
+---
+
+# 5.操作方法
+
+## 5-1.基本操作
+
+<img src="Portfolio_Sprite/howToPlay.png" width="100%" alt="操作説明">
+
+## 本作品はXbox系コントローラーでのプレイを推奨しています。  
+## キーボード操作にも対応していますが、操作感はコントローラー基準で調整しています。
+
+<br>
+
+## 5-2.推奨確認ルート
+
+## 初見で確認する場合は、以下の順番で見ると作品の特徴が伝わりやすくなります。
+
+1. ## タイトル画面で GameStart を選択
+2. ## ステージ選択画面へ進む
+3. ## TutorialStageを選択
+4. ## 2D / 3D視点切り替えを使ってステージを進行
+5. ## 視点切り替えによる移動ルートやギミック突破を確認
+6. ## 余裕があれば NormalStageとBossStageも確認
 
 
-* **GitHub**  <a href="https://github.com/YamaguchiHayato/Dimensional-Flip" target= "_blank"> https://github.com/YamaguchiHayato/Dimensional-Flip </a>
+<br>
 
-* **Portfolio**  <a href="https://yamaguchihayato.github.io/DimensionFlip-Portfolio.github.io/" target= "_blank"> https://yamaguchihayato.github.io/DimensionFlip-Portfolio.github.io/ </a>
+---
 
-* **ROM** <a href="https://drive.google.com/file/d/1wA01RpSKpDIp1yL_sSOlJwel9cVUqhps/view?usp=drive_link" target="_blank">ダウンロードはこちら</a>
+# 6.ゲーム進行とステージ紹介
 
-* **Google ドライブ** <a href = https://drive.google.com/drive/u/1/home target = "https://drive.google.com/drive/u/1/home">こちらからアクセスできます</a>
+## 6-1.タイトルからステージ選択まで
+
+<video src="./Portfolio_Video/titleAction_StageSelectScene.mp4" controls width="100%"></video>
+
+## video.1 タイトル画面からステージ選択まで
+
+## タイトル画面では、GameStart、Manual、GameEndを選択できます。  
+## GameStartを選択するとステージ選択画面に進み、プレイしたいステージを選択できます。  
+## Manualでは操作方法を確認でき、GameEndではゲームを終了できます。
+
+<br>
+
+## 6-2.TutorialStage
+
+<video src="./Portfolio_Video/PlayTutorialStage.mp4" controls width="100%"></video>
+
+## video.2 TutorialStage
+
+## TutorialStageでは、移動、ジャンプ、視点切り替えなど、ゲーム全体の基本操作を確認できます。  
+## 初めてプレイする場合でも、ゲームの流れを理解しやすいステージとして配置しています。
+
+<br>
+
+## 6-3.NormalStage
+
+<img src="Portfolio_Sprite/StageSelectScene.png" width="100%" alt="ステージ選択画面">
+
+## NormalStageでは、2D / 3D視点切り替えを使いながらステージを進みます。  
+## 敵やギミックが配置されているため、どのタイミングで視点を切り替えるかが重要になります。  
+## 本作品の核となる「視点切り替えによる攻略」を最も確認しやすいステージです。
+
+<br>
+
+## 6-4.BossStage
+
+<img src="Portfolio_Gif/BossCutIn.gif" width="100%" alt="ボス登場カットイン">
+
+## gif.3 ボス登場カットイン
+## ボス戦は別動画で解説をしています。
+## https://youtu.be/FVOEsfokTfM?si=_2CNayQ2Ri96qFfP
+## BossStageでは、カメラを切り替えながら攻撃を避け、ボスに攻撃を与えます。  
+## 通常ステージとは異なるカメラ制御を行い、視点切り替えと戦闘を組み合わせた体験を目指しています。
+
+<br>
+
+---
+
+# 7.技術的工夫点
+
+## 7-1.カメラ制御の設計
+
+<img src="Portfolio_Sprite/Camera.png" width="100%" alt="カメラ説明">
+
+## ■ 課題
+
+## 2D視点と3D視点では、カメラに求められる役割が異なります。  
+## 2D視点ではステージ全体の見通し、3D視点では奥行き方向の移動確認が必要になります。  
+## これらを1つの処理としてまとめると、条件分岐が増え、カメラクラスが肥大化する問題がありました。
+
+## ■ どう工夫したか
+
+## カメラ本体を画面中央に配置し、プレイヤーが追従ラインを上下した分だけカメラが追従するようにしました。  
+## また、斜面の移動にも対応し、プレイヤーの高さ変化に合わせて視点が追従するように調整しました。
+
+## ■ 結果
+
+## ステージ全体の視認性を確保しつつ、プレイヤーの進行に合わせて自然にカメラを動かせるようになりました。
+
+<br>
+
+---
+
+## 7-2.Strategy Patternによるカメラ処理の分離
+
+## 作品内での使用箇所:
+## &emsp; 2D / 3Dカメラの切り替えロジック
+
+## ■ 課題
+
+## 当初はカメラクラスに2D視点、3D視点、ボス戦用カメラなどの処理を直接実装していました。  
+## そのため、機能を追加するほど条件分岐が増え、処理の見通しが悪くなる問題がありました。
+
+## ■ どう工夫したか
+
+## Strategy Patternを用いて、カメラの振る舞いを状況ごとに分離しました。  
+## 2D視点、3D視点、ボス戦など、状況に応じたカメラ制御を差し替えられる構成にしました。
+
+## ■ 結果
+
+## カメラクラスの肥大化を防ぎ、視点ごとの処理を個別に修正しやすくなりました。  
+## また、ボス戦専用カメラなどを追加する際も、既存の2D / 3Dカメラ処理への影響を抑えられるようになりました。
+
+<br>
+
+---
+
+## 7-3.Factory Patternによる敵生成処理の整理
+
+## 作品内での使用箇所:
+## &emsp; 敵キャラクターの生成方式
+
+## ■ 課題
+
+## 敵の種類が増えるたびにステージクラス内のswitch文が増え、ステージクラスの責務が大きくなっていました。  
+## また、敵ごとの初期化処理がステージ側に増えることで、コードの見通しが悪くなる問題がありました。
+
+## ■ どう工夫したか
+
+## Factory Patternを用いて、敵の生成責務をFactoryクラスに分離しました。  
+## ステージ側では、敵の種類と生成座標を指定するだけで生成できるようにしました。
+
+## ■ 結果
+
+## ステージクラスが敵の詳細な生成処理を持たなくなり、ステージ側の処理を整理できました。  
+## 敵の種類を追加する際も、修正箇所を限定しやすくなりました。
+
+<br>
+
+---
+
+## 7-4.State Patternによる状態管理
+
+## 作品内での使用箇所:
+## &emsp; Playerクラス / Enemyクラス
+
+## ■ 課題
+
+## PlayerやEnemyは、移動、ジャンプ、攻撃、被弾など複数の状態を持ちます。  
+## これらを1つのクラス内で条件分岐だけで管理すると、処理が複雑になり、修正時の影響範囲が広くなります。
+
+## ■ どう工夫したか
+
+## State Patternを用いて、状態ごとの振る舞いを分離しました。  
+## PlayerとEnemyの状態をそれぞれ管理し、状態ごとに処理を切り替えられる構成にしました。
+
+## ■ 結果
+
+## 状態ごとの処理を確認しやすくなり、デバッグや機能追加を行いやすくなりました。
+
+<br>
+
+---
+
+## 7-5.Singleton Patternによる管理クラスの統一
+
+## 作品内での使用箇所:
+## &emsp; SceneManager / StageManager などの管理クラス
+
+## ■ 課題
+
+## シーン管理やステージ管理など、複数のクラスから参照される処理があります。  
+## 呼び出し方が統一されていないと、処理の流れが分かりにくくなります。
+
+## ■ どう工夫したか
+
+## SceneManagerやStageManagerなどの管理クラスにSingleton Patternを使用し、アクセス方法を統一しました。
+
+## ■ 結果
+
+## シーン遷移やステージ管理を複数のクラスから呼び出しやすくなり、ゲーム全体の管理処理を整理できました。
+
+<br>
+
+---
+
+# 8.提出・確認情報
+
+* ## 起動方法:
+  ## &emsp; `Game.exe` を起動してください。
+
+* ## 推奨環境:
+  ## &emsp; Windows 11  
+  ## &emsp; Xbox系コントローラー推奨  
+  ## &emsp; キーボード操作対応
+
+* ## 確認してほしいステージ:
+  ## &emsp; 最初にNormalStageを確認してください。  
+  ## &emsp; 理由は、2D / 3D視点切り替えを使った攻略要素が最も伝わりやすいためです。
+
+* ## 既知の不具合:
+  ## &emsp; 提出時点で把握している進行不能の既知不具合はありません。
+
+<br>
+
+---
+
+# 9.今後の展望
+
+* ## 2D / 3D視点切り替えギミックの強化
+  ## &emsp; 現状の視点切り替え要素を、さらにステージ攻略へ結びつける予定です。  
+  ## &emsp; 2D視点では進めない場所を3D視点で回り込む、3D視点で位置関係を確認して2D視点でアクションするなど、視点切り替えを使う理由をより明確にします。
+
+* ## BossStageの改修
+  ## &emsp; ボス戦では、視点切り替えによって回避ルートや攻撃チャンスが変化するように調整し、通常ステージの要素とより強く結びつけます。
+
+* ## 提出物の整理
+  ## &emsp; 企業提出時に確認しやすいよう、実行ファイル、README、ポートフォリオ、動画リンクを整理した提出フォルダを作成します。
+
+<br>
+
+---
+
+# 10.リンク集
+
+* ## YouTube:
+  ## &emsp; [プレイ動画はこちら](https://youtu.be/_fvf5sKiPTE?si=IzBmCe7CpZoNcOUo)
+
+* ## GitHub:
+  ## &emsp; [Dimensional-Flip](https://github.com/YamaguchiHayato/Dimensional-Flip)
+
+* ## Portfolio:
+  ## &emsp; [DimensionFlip Portfolio](https://yamaguchihayato.github.io/DimensionFlip-Portfolio.github.io/)
+
+* ## ROM:
+  ## &emsp; [ダウンロードはこちら](https://drive.google.com/file/d/1wA01RpSKpDIp1yL_sSOlJwel9cVUqhps/view?usp=drive_link)
+
+* ## 過去作品（チーム制作）:
+  ## &emsp; [過去作品動画はこちら](https://youtu.be/8DWuriwGJ-k?si=JC8OAdokIJmdOh5m)
+
+<br>
+
+---
 
 ## 宛先
+
 ### 学校法人河原学園 河原電子ビジネス専門学校 ゲームクリエイター科 ゲームコース 3年制
 ### 2年 山口 隼
-* 学内アドレス: CA01244029@st.kawahara.ac.jp
 
-
-
- 
-
-
-
-
+* ## 学内アドレス:
+  ## &emsp; CA01244029@st.kawahara.ac.jp

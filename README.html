@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+<link rel="stylesheet" href="file://c:\Users\CA01244029\Desktop\DimensionFlip-Portfolio.github.io\file:\C:\Users\CA01244029\Desktop\test.css" type="text/css">
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> or <div class="page"></div> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<link rel="stylesheet" href="style.css">
+<h1 id="dimensionflip">DimensionFlip</h1>
+<h2 id="2d視点と3d視点を切り替えて進むアクションゲーム">2D視点と3D視点を切り替えて進むアクションゲーム</h2>
+<a href="Portfolio_Gif/titleAction_ver20260304.gif" target="_blank">
+<img src="Portfolio_Gif/titleAction_ver20260304.gif" width="100%" alt="DimensionFlip タイトル画面">
+</a>
+<h2 id="gif1-タイトル画面">gif.1 タイトル画面</h2>
+<br>
+<h1 id="目次">目次</h1>
+<h3 id="1-プロフィール">1. <a href="#1%E3%83%97%E3%83%AD%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB">プロフィール</a></h3>
+<h3 id="2-作品概要">2. <a href="#2%E4%BD%9C%E5%93%81%E6%A6%82%E8%A6%81">作品概要</a></h3>
+<h3 id="3-制作形式と担当箇所">3. <a href="#3%E5%88%B6%E4%BD%9C%E5%BD%A2%E5%BC%8F%E3%81%A8%E6%8B%85%E5%BD%93%E7%AE%87%E6%89%80">制作形式と担当箇所</a></h3>
+<h3 id="3-1-制作形式">  3-1. <a href="#3-1%E5%88%B6%E4%BD%9C%E5%BD%A2%E5%BC%8F">制作形式</a></h3>
+<h3 id="3-2-担当箇所">  3-2. <a href="#3-2%E6%8B%85%E5%BD%93%E7%AE%87%E6%89%80">担当箇所</a></h3>
+<h3 id="4-ゲームの特徴">4. <a href="#4%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%AE%E7%89%B9%E5%BE%B4">ゲームの特徴</a></h3>
+<h3 id="4-1-作品の核">  4-1. <a href="#4-1%E4%BD%9C%E5%93%81%E3%81%AE%E6%A0%B8">作品の核</a></h3>
+<h3 id="4-2-2d--3d視点切り替えによる攻略">  4-2. <a href="#4-2-2d--3d%E8%A6%96%E7%82%B9%E5%88%87%E3%82%8A%E6%9B%BF%E3%81%88%E3%81%AB%E3%82%88%E3%82%8B%E6%94%BB%E7%95%A5">2D / 3D視点切り替えによる攻略</a></h3>
+<h3 id="4-3-ステージ構成">  4-3. <a href="#4-3%E3%82%B9%E3%83%86%E3%83%BC%E3%82%B8%E6%A7%8B%E6%88%90">ステージ構成</a></h3>
+<h3 id="5-操作方法">5. <a href="#5%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95">操作方法</a></h3>
+<h3 id="5-1-基本操作">  5-1. <a href="#5-1%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C">基本操作</a></h3>
+<h3 id="5-2-推奨確認ルート">  5-2. <a href="#5-2%E6%8E%A8%E5%A5%A8%E7%A2%BA%E8%AA%8D%E3%83%AB%E3%83%BC%E3%83%88">推奨確認ルート</a></h3>
+<h3 id="6-ゲーム進行とステージ紹介">6. <a href="#6%E3%82%B2%E3%83%BC%E3%83%A0%E9%80%B2%E8%A1%8C%E3%81%A8%E3%82%B9%E3%83%86%E3%83%BC%E3%82%B8%E7%B4%B9%E4%BB%8B">ゲーム進行とステージ紹介</a></h3>
+<h3 id="6-1-タイトルからステージ選択まで">  6-1. <a href="#6-1%E3%82%BF%E3%82%A4%E3%83%88%E3%83%AB%E3%81%8B%E3%82%89%E3%82%B9%E3%83%86%E3%83%BC%E3%82%B8%E9%81%B8%E6%8A%9E%E3%81%BE%E3%81%A7">タイトルからステージ選択まで</a></h3>
+<h3 id="6-2-tutorialstage">  6-2. <a href="#6-2tutorialstage">TutorialStage</a></h3>
+<h3 id="6-3-normalstage">  6-3. <a href="#6-3normalstage">NormalStage</a></h3>
+<h3 id="6-4-bossstage">  6-4. <a href="#6-4bossstage">BossStage</a></h3>
+<h3 id="7-技術的工夫点">7. <a href="#7%E6%8A%80%E8%A1%93%E7%9A%84%E5%B7%A5%E5%A4%AB%E7%82%B9">技術的工夫点</a></h3>
+<h3 id="7-1-カメラ制御の設計">  7-1. <a href="#7-1%E3%82%AB%E3%83%A1%E3%83%A9%E5%88%B6%E5%BE%A1%E3%81%AE%E8%A8%AD%E8%A8%88">カメラ制御の設計</a></h3>
+<h3 id="7-2-strategy-patternによるカメラ処理の分離">  7-2. <a href="#7-2strategy-pattern%E3%81%AB%E3%82%88%E3%82%8B%E3%82%AB%E3%83%A1%E3%83%A9%E5%87%A6%E7%90%86%E3%81%AE%E5%88%86%E9%9B%A2">Strategy Patternによるカメラ処理の分離</a></h3>
+<h3 id="7-3-factory-patternによる敵生成処理の整理">  7-3. <a href="#7-3factory-pattern%E3%81%AB%E3%82%88%E3%82%8B%E6%95%B5%E7%94%9F%E6%88%90%E5%87%A6%E7%90%86%E3%81%AE%E6%95%B4%E7%90%86">Factory Patternによる敵生成処理の整理</a></h3>
+<h3 id="7-4-state-patternによる状態管理">  7-4. <a href="#7-4state-pattern%E3%81%AB%E3%82%88%E3%82%8B%E7%8A%B6%E6%85%8B%E7%AE%A1%E7%90%86">State Patternによる状態管理</a></h3>
+<h3 id="7-5-singleton-patternによる管理クラスの統一">  7-5. <a href="#7-5singleton-pattern%E3%81%AB%E3%82%88%E3%82%8B%E7%AE%A1%E7%90%86%E3%82%AF%E3%83%A9%E3%82%B9%E3%81%AE%E7%B5%B1%E4%B8%80">Singleton Patternによる管理クラスの統一</a></h3>
+<h3 id="8-提出確認情報">8. <a href="#8%E6%8F%90%E5%87%BA%E7%A2%BA%E8%AA%8D%E6%83%85%E5%A0%B1">提出・確認情報</a></h3>
+<h3 id="9-今後の展望">9. <a href="#9%E4%BB%8A%E5%BE%8C%E3%81%AE%E5%B1%95%E6%9C%9B">今後の展望</a></h3>
+<h3 id="10-リンク集">10. <a href="#10%E3%83%AA%E3%83%B3%E3%82%AF%E9%9B%86">リンク集</a></h3>
+<br>
+<hr>
+<h1 id="1プロフィール">1.プロフィール</h1>
+<ul>
+<li>
+<h2 id="氏名">氏名:</h2>
+<h2 id="山口-隼ヤマグチ-ハヤト">  山口 隼（ヤマグチ ハヤト）</h2>
+</li>
+<li>
+<h2 id="所属">所属:</h2>
+<h2 id="河原電子ビジネス専門学校-ゲームクリエイター科-27卒">  河原電子ビジネス専門学校 ゲームクリエイター科 27卒</h2>
+</li>
+<li>
+<h2 id="希望職種">希望職種:</h2>
+<h2 id="プログラマ">  プログラマ</h2>
+</li>
+<li>
+<h2 id="強み">強み:</h2>
+<h2 id="cを用いたゲーム制作においてカメラ制御状態管理敵生成処理などを設計しゲームの仕組みを実装することを強みとしています">  C++を用いたゲーム制作において、カメラ制御・状態管理・敵生成処理などを設計し、ゲームの仕組みを実装することを強みとしています。</h2>
+<h2 id="本作品では2d視点と3d視点を切り替えるゲーム性を成立させるためカメラ制御ステージ進行敵生成プレイヤー制御を中心に実装しました">  本作品では、2D視点と3D視点を切り替えるゲーム性を成立させるため、カメラ制御、ステージ進行、敵生成、プレイヤー制御を中心に実装しました。</h2>
+</li>
+<li>
+<h2 id="email">Email:</h2>
+<h2 id="ca01244029stkawaharaacjp">  CA01244029@st.kawahara.ac.jp</h2>
+</li>
+</ul>
+<br>
+<hr>
+<h1 id="2作品概要">2.作品概要</h1>
+<ul>
+<li>
+<h2 id="作品名">作品名:</h2>
+<h2 id="dimensionflip-1">  DimensionFlip</h2>
+</li>
+<li>
+<h2 id="ジャンル">ジャンル:</h2>
+<h2 id="2d--3d視点切り替えアクションゲーム">  2D / 3D視点切り替えアクションゲーム</h2>
+</li>
+<li>
+<h2 id="使用言語">使用言語:</h2>
+<h2 id="c">  C++</h2>
+</li>
+<li>
+<h2 id="開発環境">開発環境:</h2>
+<h2 id="visual-studio-2022">  Visual Studio 2022</h2>
+<h2 id="学内エンジン">  学内エンジン</h2>
+</li>
+<li>
+<h2 id="開発ツール">開発ツール:</h2>
+<h2 id="github">  GitHub</h2>
+<h2 id="fork">  Fork</h2>
+</li>
+<li>
+<h2 id="対応環境">対応環境:</h2>
+<h2 id="windows-11">  Windows 11</h2>
+</li>
+<li>
+<h2 id="推奨操作">推奨操作:</h2>
+<h2 id="xbox系コントローラー">  Xbox系コントローラー</h2>
+</li>
+<li>
+<h2 id="キーボード操作">キーボード操作:</h2>
+<h2 id="対応">  対応</h2>
+</li>
+<li>
+<h2 id="プレイ人数">プレイ人数:</h2>
+<h2 id="1人">  1人</h2>
+</li>
+<li>
+<h2 id="開発期間">開発期間:</h2>
+<h2 id="2025年9月--現在進行中">  2025年9月 〜 現在進行中</h2>
+</li>
+</ul>
+<br>
+<hr>
+<h1 id="3制作形式と担当箇所">3.制作形式と担当箇所</h1>
+<h2 id="3-1制作形式">3-1.制作形式</h2>
+<ul>
+<li>
+<h2 id="個人制作">個人制作</h2>
+<h2 id="企画実装ステージ構成カメラ制御敵生成ポートフォリオ作成を担当しました">  企画、実装、ステージ構成、カメラ制御、敵生成、ポートフォリオ作成を担当しました。</h2>
+</li>
+</ul>
+<br>
+<h2 id="3-2担当箇所">3-2.担当箇所</h2>
+<ul>
+<li>
+<h2 id="2d--3d視点切り替えシステムの実装">2D / 3D視点切り替えシステムの実装</h2>
+</li>
+<li>
+<h2 id="カメラ制御の設計実装">カメラ制御の設計・実装</h2>
+</li>
+<li>
+<h2 id="視点切り替え許可エリアの管理">視点切り替え許可エリアの管理</h2>
+</li>
+<li>
+<h2 id="ステージ進行管理">ステージ進行管理</h2>
+</li>
+<li>
+<h2 id="プレイヤー制御">プレイヤー制御</h2>
+</li>
+<li>
+<h2 id="敵キャラクターの生成処理">敵キャラクターの生成処理</h2>
+</li>
+<li>
+<h2 id="ステージごとの遷移処理">ステージごとの遷移処理</h2>
+</li>
+<li>
+<h2 id="ui操作説明ポートフォリオ整理">UI・操作説明・ポートフォリオ整理</h2>
+</li>
+</ul>
+<br>
+<hr>
+<h1 id="4ゲームの特徴">4.ゲームの特徴</h1>
+<h2 id="4-1作品の核">4-1.作品の核</h2>
+<h2 id="dimensionflipは2d視点と3d視点を切り替えながらステージを進むアクションゲームです">DimensionFlipは、2D視点と3D視点を切り替えながらステージを進むアクションゲームです。</h2>
+<h2 id="2d視点では横スクロールに近い感覚で進行し3d視点では奥行き方向への移動や回り込みが可能になります">2D視点では横スクロールに近い感覚で進行し、3D視点では奥行き方向への移動や回り込みが可能になります。</h2>
+<h2 id="本作品では視点切り替えを単なるカメラ演出ではなく移動ルートの発見障害物の突破敵回避に使うゲーム性として実装しました">本作品では、視点切り替えを単なるカメラ演出ではなく、移動ルートの発見・障害物の突破・敵回避に使うゲーム性として実装しました。</h2>
+<br>
+<img src="Portfolio_Gif/Tutorial.gif" width="100%" alt="2D / 3D視点切り替え">
+<h2 id="gif2-2d--3d視点切り替えを使ったステージ進行">gif.2 2D / 3D視点切り替えを使ったステージ進行</h2>
+<br>
+<h2 id="4-22d--3d視点切り替えによる攻略">4-2.2D / 3D視点切り替えによる攻略</h2>
+<h2 id="2d視点では奥行き方向の情報が制限されるためステージを横方向に進むアクションとして見せています">2D視点では、奥行き方向の情報が制限されるため、ステージを横方向に進むアクションとして見せています。</h2>
+<h2 id="一方で3d視点に切り替えることで2d視点では分かりにくい奥行き方向のルートや回避経路を確認できます">一方で、3D視点に切り替えることで、2D視点では分かりにくい奥行き方向のルートや回避経路を確認できます。</h2>
+<h2 id="想定している攻略体験は以下の通りです">想定している攻略体験は以下の通りです。</h2>
+<ul>
+<li>
+<h2 id="2d視点では進みにくい場所を3d視点で回り込む">2D視点では進みにくい場所を、3D視点で回り込む</h2>
+</li>
+<li>
+<h2 id="3d視点で地形の位置関係を確認し2d視点でジャンプアクションを行う">3D視点で地形の位置関係を確認し、2D視点でジャンプアクションを行う</h2>
+</li>
+<li>
+<h2 id="敵や障害物に対して視点を切り替えて安全なルートを探す">敵や障害物に対して、視点を切り替えて安全なルートを探す</h2>
+</li>
+</ul>
+<br>
+<h2 id="4-3ステージ構成">4-3.ステージ構成</h2>
+<h2 id="本作品にはtutorialstagenormalstagebossstageの3種類のステージがあります">本作品には、TutorialStage、NormalStage、BossStageの3種類のステージがあります。</h2>
+<ul>
+<li>
+<h2 id="tutorialstage">TutorialStage:</h2>
+<h2 id="基本操作とゲーム全体の流れを確認できます">  基本操作とゲーム全体の流れを確認できます。</h2>
+</li>
+<li>
+<h2 id="normalstage">NormalStage:</h2>
+<h2 id="2d--3d視点切り替えを使ったステージ攻略を確認できます">  2D / 3D視点切り替えを使ったステージ攻略を確認できます。</h2>
+</li>
+<li>
+<h2 id="bossstage">BossStage:</h2>
+<h2 id="視点切り替えと戦闘を組み合わせた場面を確認できます">  視点切り替えと戦闘を組み合わせた場面を確認できます。</h2>
+</li>
+</ul>
+<br>
+<hr>
+<h1 id="5操作方法">5.操作方法</h1>
+<h2 id="5-1基本操作">5-1.基本操作</h2>
+<img src="Portfolio_Sprite/howToPlay.png" width="100%" alt="操作説明">
+<h2 id="本作品はxbox系コントローラーでのプレイを推奨しています">本作品はXbox系コントローラーでのプレイを推奨しています。</h2>
+<h2 id="キーボード操作にも対応していますが操作感はコントローラー基準で調整しています">キーボード操作にも対応していますが、操作感はコントローラー基準で調整しています。</h2>
+<br>
+<h2 id="5-2推奨確認ルート">5-2.推奨確認ルート</h2>
+<h2 id="初見で確認する場合は以下の順番で見ると作品の特徴が伝わりやすくなります">初見で確認する場合は、以下の順番で見ると作品の特徴が伝わりやすくなります。</h2>
+<ol>
+<li>
+<h2 id="タイトル画面で-gamestart-を選択">タイトル画面で GameStart を選択</h2>
+</li>
+<li>
+<h2 id="ステージ選択画面へ進む">ステージ選択画面へ進む</h2>
+</li>
+<li>
+<h2 id="normalstageを選択">NormalStageを選択</h2>
+</li>
+<li>
+<h2 id="2d--3d視点切り替えを使ってステージを進行">2D / 3D視点切り替えを使ってステージを進行</h2>
+</li>
+<li>
+<h2 id="視点切り替えによる移動ルートやギミック突破を確認">視点切り替えによる移動ルートやギミック突破を確認</h2>
+</li>
+<li>
+<h2 id="余裕があればtutorialstageとbossstageも確認">余裕があればTutorialStageとBossStageも確認</h2>
+</li>
+</ol>
+<h2 id="企業提出時は最初にnormalstageを見てもらうことで2d--3d視点切り替えのゲーム性が伝わりやすくなります">企業提出時は、最初にNormalStageを見てもらうことで、2D / 3D視点切り替えのゲーム性が伝わりやすくなります。</h2>
+<br>
+<hr>
+<h1 id="6ゲーム進行とステージ紹介">6.ゲーム進行とステージ紹介</h1>
+<h2 id="6-1タイトルからステージ選択まで">6-1.タイトルからステージ選択まで</h2>
+<p><video src="./Portfolio_Video/titleAction_StageSelectScene.mp4" controls width="100%"></video></p>
+<h2 id="video1-タイトル画面からステージ選択まで">video.1 タイトル画面からステージ選択まで</h2>
+<h2 id="タイトル画面ではgamestartmanualgameendを選択できます">タイトル画面では、GameStart、Manual、GameEndを選択できます。</h2>
+<h2 id="gamestartを選択するとステージ選択画面に進みプレイしたいステージを選択できます">GameStartを選択するとステージ選択画面に進み、プレイしたいステージを選択できます。</h2>
+<h2 id="manualでは操作方法を確認できgameendではゲームを終了できます">Manualでは操作方法を確認でき、GameEndではゲームを終了できます。</h2>
+<br>
+<h2 id="6-2tutorialstage">6-2.TutorialStage</h2>
+<p><video src="./Portfolio_Video/PlayTutorialStage.mp4" controls width="100%"></video></p>
+<h2 id="video2-tutorialstage">video.2 TutorialStage</h2>
+<h2 id="tutorialstageでは移動ジャンプ視点切り替えなどゲーム全体の基本操作を確認できます">TutorialStageでは、移動、ジャンプ、視点切り替えなど、ゲーム全体の基本操作を確認できます。</h2>
+<h2 id="初めてプレイする場合でもゲームの流れを理解しやすいステージとして配置しています">初めてプレイする場合でも、ゲームの流れを理解しやすいステージとして配置しています。</h2>
+<br>
+<h2 id="6-3normalstage">6-3.NormalStage</h2>
+<img src="Portfolio_Sprite/StageSelectScene.png" width="100%" alt="ステージ選択画面">
+<h2 id="normalstageでは2d--3d視点切り替えを使いながらステージを進みます">NormalStageでは、2D / 3D視点切り替えを使いながらステージを進みます。</h2>
+<h2 id="敵やギミックが配置されているためどのタイミングで視点を切り替えるかが重要になります">敵やギミックが配置されているため、どのタイミングで視点を切り替えるかが重要になります。</h2>
+<h2 id="本作品の核となる視点切り替えによる攻略を最も確認しやすいステージです">本作品の核となる「視点切り替えによる攻略」を最も確認しやすいステージです。</h2>
+<br>
+<h2 id="6-4bossstage">6-4.BossStage</h2>
+<img src="Portfolio_Gif/BossCutIn.gif" width="100%" alt="ボス登場カットイン">
+<h2 id="gif3-ボス登場カットイン">gif.3 ボス登場カットイン</h2>
+<h2 id="bossstageではカメラを切り替えながら攻撃を避けボスに攻撃を与えます">BossStageでは、カメラを切り替えながら攻撃を避け、ボスに攻撃を与えます。</h2>
+<h2 id="通常ステージとは異なるカメラ制御を行い視点切り替えと戦闘を組み合わせた体験を目指しています">通常ステージとは異なるカメラ制御を行い、視点切り替えと戦闘を組み合わせた体験を目指しています。</h2>
+<br>
+<hr>
+<h1 id="7技術的工夫点">7.技術的工夫点</h1>
+<h2 id="7-1カメラ制御の設計">7-1.カメラ制御の設計</h2>
+<img src="Portfolio_Sprite/Camera.png" width="100%" alt="カメラ説明">
+<h2 id="-課題">■ 課題</h2>
+<h2 id="2d視点と3d視点ではカメラに求められる役割が異なります">2D視点と3D視点では、カメラに求められる役割が異なります。</h2>
+<h2 id="2d視点ではステージ全体の見通し3d視点では奥行き方向の移動確認が必要になります">2D視点ではステージ全体の見通し、3D視点では奥行き方向の移動確認が必要になります。</h2>
+<h2 id="これらを1つの処理としてまとめると条件分岐が増えカメラクラスが肥大化する問題がありました">これらを1つの処理としてまとめると、条件分岐が増え、カメラクラスが肥大化する問題がありました。</h2>
+<h2 id="-どう工夫したか">■ どう工夫したか</h2>
+<h2 id="カメラ本体を画面中央に配置しプレイヤーが追従ラインを上下した分だけカメラが追従するようにしました">カメラ本体を画面中央に配置し、プレイヤーが追従ラインを上下した分だけカメラが追従するようにしました。</h2>
+<h2 id="また斜面の移動にも対応しプレイヤーの高さ変化に合わせて視点が追従するように調整しました">また、斜面の移動にも対応し、プレイヤーの高さ変化に合わせて視点が追従するように調整しました。</h2>
+<h2 id="-結果">■ 結果</h2>
+<h2 id="ステージ全体の視認性を確保しつつプレイヤーの進行に合わせて自然にカメラを動かせるようになりました">ステージ全体の視認性を確保しつつ、プレイヤーの進行に合わせて自然にカメラを動かせるようになりました。</h2>
+<br>
+<hr>
+<h2 id="7-2strategy-patternによるカメラ処理の分離">7-2.Strategy Patternによるカメラ処理の分離</h2>
+<h2 id="作品内での使用箇所">作品内での使用箇所:</h2>
+<h2 id="2d--3dカメラの切り替えロジック">  2D / 3Dカメラの切り替えロジック</h2>
+<h2 id="-課題-1">■ 課題</h2>
+<h2 id="当初はカメラクラスに2d視点3d視点ボス戦用カメラなどの処理を直接実装していました">当初はカメラクラスに2D視点、3D視点、ボス戦用カメラなどの処理を直接実装していました。</h2>
+<h2 id="そのため機能を追加するほど条件分岐が増え処理の見通しが悪くなる問題がありました">そのため、機能を追加するほど条件分岐が増え、処理の見通しが悪くなる問題がありました。</h2>
+<h2 id="-どう工夫したか-1">■ どう工夫したか</h2>
+<h2 id="strategy-patternを用いてカメラの振る舞いを状況ごとに分離しました">Strategy Patternを用いて、カメラの振る舞いを状況ごとに分離しました。</h2>
+<h2 id="2d視点3d視点ボス戦など状況に応じたカメラ制御を差し替えられる構成にしました">2D視点、3D視点、ボス戦など、状況に応じたカメラ制御を差し替えられる構成にしました。</h2>
+<h2 id="-結果-1">■ 結果</h2>
+<h2 id="カメラクラスの肥大化を防ぎ視点ごとの処理を個別に修正しやすくなりました">カメラクラスの肥大化を防ぎ、視点ごとの処理を個別に修正しやすくなりました。</h2>
+<h2 id="またボス戦専用カメラなどを追加する際も既存の2d--3dカメラ処理への影響を抑えられるようになりました">また、ボス戦専用カメラなどを追加する際も、既存の2D / 3Dカメラ処理への影響を抑えられるようになりました。</h2>
+<br>
+<hr>
+<h2 id="7-3factory-patternによる敵生成処理の整理">7-3.Factory Patternによる敵生成処理の整理</h2>
+<h2 id="作品内での使用箇所-1">作品内での使用箇所:</h2>
+<h2 id="敵キャラクターの生成方式">  敵キャラクターの生成方式</h2>
+<h2 id="-課題-2">■ 課題</h2>
+<h2 id="敵の種類が増えるたびにステージクラス内のswitch文が増えステージクラスの責務が大きくなっていました">敵の種類が増えるたびにステージクラス内のswitch文が増え、ステージクラスの責務が大きくなっていました。</h2>
+<h2 id="また敵ごとの初期化処理がステージ側に増えることでコードの見通しが悪くなる問題がありました">また、敵ごとの初期化処理がステージ側に増えることで、コードの見通しが悪くなる問題がありました。</h2>
+<h2 id="-どう工夫したか-2">■ どう工夫したか</h2>
+<h2 id="factory-patternを用いて敵の生成責務をfactoryクラスに分離しました">Factory Patternを用いて、敵の生成責務をFactoryクラスに分離しました。</h2>
+<h2 id="ステージ側では敵の種類と生成座標を指定するだけで生成できるようにしました">ステージ側では、敵の種類と生成座標を指定するだけで生成できるようにしました。</h2>
+<h2 id="-結果-2">■ 結果</h2>
+<h2 id="ステージクラスが敵の詳細な生成処理を持たなくなりステージ側の処理を整理できました">ステージクラスが敵の詳細な生成処理を持たなくなり、ステージ側の処理を整理できました。</h2>
+<h2 id="敵の種類を追加する際も修正箇所を限定しやすくなりました">敵の種類を追加する際も、修正箇所を限定しやすくなりました。</h2>
+<br>
+<hr>
+<h2 id="7-4state-patternによる状態管理">7-4.State Patternによる状態管理</h2>
+<h2 id="作品内での使用箇所-2">作品内での使用箇所:</h2>
+<h2 id="playerクラス--enemyクラス">  Playerクラス / Enemyクラス</h2>
+<h2 id="-課題-3">■ 課題</h2>
+<h2 id="playerやenemyは移動ジャンプ攻撃被弾など複数の状態を持ちます">PlayerやEnemyは、移動、ジャンプ、攻撃、被弾など複数の状態を持ちます。</h2>
+<h2 id="これらを1つのクラス内で条件分岐だけで管理すると処理が複雑になり修正時の影響範囲が広くなります">これらを1つのクラス内で条件分岐だけで管理すると、処理が複雑になり、修正時の影響範囲が広くなります。</h2>
+<h2 id="-どう工夫したか-3">■ どう工夫したか</h2>
+<h2 id="state-patternを用いて状態ごとの振る舞いを分離しました">State Patternを用いて、状態ごとの振る舞いを分離しました。</h2>
+<h2 id="playerとenemyの状態をそれぞれ管理し状態ごとに処理を切り替えられる構成にしました">PlayerとEnemyの状態をそれぞれ管理し、状態ごとに処理を切り替えられる構成にしました。</h2>
+<h2 id="-結果-3">■ 結果</h2>
+<h2 id="状態ごとの処理を確認しやすくなりデバッグや機能追加を行いやすくなりました">状態ごとの処理を確認しやすくなり、デバッグや機能追加を行いやすくなりました。</h2>
+<br>
+<hr>
+<h2 id="7-5singleton-patternによる管理クラスの統一">7-5.Singleton Patternによる管理クラスの統一</h2>
+<h2 id="作品内での使用箇所-3">作品内での使用箇所:</h2>
+<h2 id="scenemanager--stagemanager-などの管理クラス">  SceneManager / StageManager などの管理クラス</h2>
+<h2 id="-課題-4">■ 課題</h2>
+<h2 id="シーン管理やステージ管理など複数のクラスから参照される処理があります">シーン管理やステージ管理など、複数のクラスから参照される処理があります。</h2>
+<h2 id="呼び出し方が統一されていないと処理の流れが分かりにくくなります">呼び出し方が統一されていないと、処理の流れが分かりにくくなります。</h2>
+<h2 id="-どう工夫したか-4">■ どう工夫したか</h2>
+<h2 id="scenemanagerやstagemanagerなどの管理クラスにsingleton-patternを使用しアクセス方法を統一しました">SceneManagerやStageManagerなどの管理クラスにSingleton Patternを使用し、アクセス方法を統一しました。</h2>
+<h2 id="-結果-4">■ 結果</h2>
+<h2 id="シーン遷移やステージ管理を複数のクラスから呼び出しやすくなりゲーム全体の管理処理を整理できました">シーン遷移やステージ管理を複数のクラスから呼び出しやすくなり、ゲーム全体の管理処理を整理できました。</h2>
+<br>
+<hr>
+<h1 id="8提出確認情報">8.提出・確認情報</h1>
+<ul>
+<li>
+<h2 id="起動方法">起動方法:</h2>
+<h2 id="gameexe-を起動してください">  <code>Game.exe</code> を起動してください。</h2>
+</li>
+<li>
+<h2 id="推奨環境">推奨環境:</h2>
+<h2 id="windows-11-1">  Windows 11</h2>
+<h2 id="xbox系コントローラー推奨">  Xbox系コントローラー推奨</h2>
+<h2 id="キーボード操作対応">  キーボード操作対応</h2>
+</li>
+<li>
+<h2 id="確認してほしいステージ">確認してほしいステージ:</h2>
+<h2 id="最初にnormalstageを確認してください">  最初にNormalStageを確認してください。</h2>
+<h2 id="理由は2d--3d視点切り替えを使った攻略要素が最も伝わりやすいためです">  理由は、2D / 3D視点切り替えを使った攻略要素が最も伝わりやすいためです。</h2>
+</li>
+<li>
+<h2 id="既知の不具合">既知の不具合:</h2>
+<h2 id="提出時点で把握している進行不能の既知不具合はありません">  提出時点で把握している進行不能の既知不具合はありません。</h2>
+</li>
+</ul>
+<br>
+<hr>
+<h1 id="9今後の展望">9.今後の展望</h1>
+<ul>
+<li>
+<h2 id="2d--3d視点切り替えギミックの強化">2D / 3D視点切り替えギミックの強化</h2>
+<h2 id="現状の視点切り替え要素をさらにステージ攻略へ結びつける予定です">  現状の視点切り替え要素を、さらにステージ攻略へ結びつける予定です。</h2>
+<h2 id="2d視点では進めない場所を3d視点で回り込む3d視点で位置関係を確認して2d視点でアクションするなど視点切り替えを使う理由をより明確にします">  2D視点では進めない場所を3D視点で回り込む、3D視点で位置関係を確認して2D視点でアクションするなど、視点切り替えを使う理由をより明確にします。</h2>
+</li>
+<li>
+<h2 id="bossstageの改修">BossStageの改修</h2>
+<h2 id="ボス戦では視点切り替えによって回避ルートや攻撃チャンスが変化するように調整し通常ステージの要素とより強く結びつけます">  ボス戦では、視点切り替えによって回避ルートや攻撃チャンスが変化するように調整し、通常ステージの要素とより強く結びつけます。</h2>
+</li>
+<li>
+<h2 id="提出物の整理">提出物の整理</h2>
+<h2 id="企業提出時に確認しやすいよう実行ファイルreadmeポートフォリオ動画リンクを整理した提出フォルダを作成します">  企業提出時に確認しやすいよう、実行ファイル、README、ポートフォリオ、動画リンクを整理した提出フォルダを作成します。</h2>
+</li>
+</ul>
+<br>
+<hr>
+<h1 id="10リンク集">10.リンク集</h1>
+<ul>
+<li>
+<h2 id="youtube">YouTube:</h2>
+<h2 id="プレイ動画はこちら">  <a href="https://youtu.be/_fvf5sKiPTE?si=IzBmCe7CpZoNcOUo">プレイ動画はこちら</a></h2>
+</li>
+<li>
+<h2 id="github-1">GitHub:</h2>
+<h2 id="dimensional-flip">  <a href="https://github.com/YamaguchiHayato/Dimensional-Flip">Dimensional-Flip</a></h2>
+</li>
+<li>
+<h2 id="portfolio">Portfolio:</h2>
+<h2 id="dimensionflip-portfolio">  <a href="https://yamaguchihayato.github.io/DimensionFlip-Portfolio.github.io/">DimensionFlip Portfolio</a></h2>
+</li>
+<li>
+<h2 id="rom">ROM:</h2>
+<h2 id="ダウンロードはこちら">  <a href="https://drive.google.com/file/d/1wA01RpSKpDIp1yL_sSOlJwel9cVUqhps/view?usp=drive_link">ダウンロードはこちら</a></h2>
+</li>
+<li>
+<h2 id="過去作品チーム制作">過去作品（チーム制作）:</h2>
+<h2 id="過去作品動画はこちら">  <a href="https://youtu.be/8DWuriwGJ-k?si=JC8OAdokIJmdOh5m">過去作品動画はこちら</a></h2>
+</li>
+</ul>
+<br>
+<hr>
+<h2 id="宛先">宛先</h2>
+<h3 id="学校法人河原学園-河原電子ビジネス専門学校-ゲームクリエイター科-ゲームコース-3年制">学校法人河原学園 河原電子ビジネス専門学校 ゲームクリエイター科 ゲームコース 3年制</h3>
+<h3 id="2年-山口-隼">2年 山口 隼</h3>
+<ul>
+<li>
+<h2 id="学内アドレス">学内アドレス:</h2>
+<h2 id="ca01244029stkawaharaacjp-1">  CA01244029@st.kawahara.ac.jp</h2>
+</li>
+</ul>
+
+</body>
+</html>
