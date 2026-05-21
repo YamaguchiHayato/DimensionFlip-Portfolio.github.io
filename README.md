@@ -4,9 +4,11 @@
 
 **2D視点と3D視点を切り替え、見え方の違いを使って攻略するアクションゲーム**
 
-<a href="Portfolio_Gif/titleAction_ver20260304.gif" target="_blank">
-<img src="Portfolio_Gif/titleAction_ver20260304.gif" width="100%" alt="DimensionFlip タイトル画面">
-</a>
+<p class="media-wrap">
+  <a href="Portfolio_Gif/titleAction_ver20260304.gif" target="_blank">
+    <img class="title-image" src="Portfolio_Gif/titleAction_ver20260304.gif" alt="DimensionFlip タイトル画面">
+  </a>
+</p>
 
 ---
 
@@ -69,7 +71,10 @@ C++を用いたゲーム制作で、ゲームの仕組みを支える実装を�
 ---
 
 ### どんなゲームか
-<img src = "Portfolio_Sprite/View2Dor3D.png" width = "100%" alt = "視点の見え方の違い">
+<p class="media-wrap">
+  <img class="portfolio-image" src="Portfolio_Sprite/View2Dor3D.png" alt="視点の見え方の違い">
+</p>
+
 DimensionFlipは、2D視点と3D視点を切り替えながら進むアクションゲームです。
 
 2D視点では、横スクロールに近い感覚でステージを進みます。
@@ -81,7 +86,10 @@ DimensionFlipは、2D視点と3D視点を切り替えながら進むアクショ
 ---
 
 ### 何が面白いか
-<img src = "Portfolio_Sprite/howToPlayGame.png" width = "100%" alt = "ゲームの遊び方の流れ">
+<p class="media-wrap">
+  <img class="portfolio-image" src="Portfolio_Sprite/howToPlayGame.png" alt="ゲームの遊び方の流れ">
+</p>
+
 このゲームの面白さは、同じステージでも視点を変えることで攻略方法が変わることです。
 
 2D視点では進みにくい場所でも、3D視点に切り替えることで奥へ回り込めます。
@@ -96,7 +104,9 @@ DimensionFlipは、2D視点と3D視点を切り替えながら進むアクショ
 
 ### 2D / 3D視点切り替えを使ったステージ進行
 
-<img src="Portfolio_Gif/Tutorial.gif" width="100%" alt="2D / 3D視点切り替えを使ったステージ進行">
+<p class="media-wrap">
+  <img class="portfolio-image" src="Portfolio_Gif/Tutorial.gif" alt="2D / 3D視点切り替えを使ったステージ進行">
+</p>
 
 2D視点では、横方向のアクションを中心に見せています。
 
@@ -104,7 +114,9 @@ DimensionFlipは、2D視点と3D視点を切り替えながら進むアクショ
 
 ### タイトル画面からステージ選択まで
 
-<video src="./Portfolio_Video/titleAction_StageSelectScene.mp4" controls width="100%"></video>
+<p class="media-wrap">
+  <video class="portfolio-video" src="./Portfolio_Video/titleAction_StageSelectScene.mp4" controls></video>
+</p>
 
 タイトル画面では、GameStart、Manual、GameEndを選択できます。
 
@@ -112,7 +124,9 @@ GameStartを選択するとステージ選択画面に進みます。
 
 ### TutorialStage
 
-<video src="./Portfolio_Video/PlayTutorialStage.mp4" controls width="100%"></video>
+<p class="media-wrap">
+  <video class="portfolio-video" src="./Portfolio_Video/PlayTutorialStage.mp4" controls></video>
+</p>
 
 TutorialStageでは、移動、ジャンプ、視点切り替えなどを確認できます。
 
@@ -120,7 +134,9 @@ TutorialStageでは、移動、ジャンプ、視点切り替えなどを確認�
 
 ### NormalStage
 
-<img src="Portfolio_Sprite/StageSelectScene.png" width="100%" alt="ステージ選択画面">
+<p class="media-wrap">
+  <img class="portfolio-image" src="Portfolio_Sprite/StageSelectScene.png" alt="ステージ選択画面">
+</p>
 
 NormalStageでは、2D / 3D視点切り替えを使いながらステージを進みます。
 
@@ -130,7 +146,9 @@ NormalStageでは、2D / 3D視点切り替えを使いながらステージを�
 
 ### BossStage
 
-<img src="Portfolio_Gif/BossCutIn.gif" width="100%" alt="ボス登場カットイン">
+<p class="media-wrap">
+  <img class="portfolio-image" src="Portfolio_Gif/BossCutIn.gif" alt="ボス登場カットイン">
+</p>
 
 BossStageでは、通常ステージとは異なるカメラ制御を使用しています。
 
@@ -165,97 +183,51 @@ https://youtu.be/FVOEsfokTfM?si=_2CNayQ2Ri96qFfP
 |---------|--------|---------|
 | Strategy Pattern | カメラ制御 | 視点ごとの処理を分離するため |
 | Factory Pattern | 敵生成処理 | ステージ側が敵クラスに直接依存しないようにするため |
-| State Pattern | Player / Enemyの状態管理 | 状態ごとの処理を分離するため |
+| State Pattern | Player / Enemy/Bossの状態管理 | 状態ごとの処理を分離するため |
 
 ---
 
 ### Strategy Patternによるカメラ制御
-<img src="Portfolio_Sprite/StatePattern_Result.png">
-<img src="Portfolio_Sprite/CameraStrategy.png" width="100%" alt="Strategy Patternによるカメラ制御の構成図">
+<p class="media-wrap">
+  <img class="diagram-image" src="Portfolio_Sprite/StrategyPattern_Result.png" alt="Strategy Patternによるカメラ制御の改善結果">
+</p>
 
-#### 課題
-
-2D視点、3D視点、ボス戦用カメラでは、必要なカメラ処理が異なります。
-
-これらをGameCameraクラスに直接書き続けると、条件分岐が増えます。
-
-その結果、カメラクラスが肥大化し、処理の見通しが悪くなる問題がありました。
-
-#### 工夫した点
-
-Strategy Patternを用いて、カメラの振る舞いを状況ごとに分離しました。
-
-GameCameraがすべての処理を持つのではなく、状況に応じたStrategyを切り替える構成にしています。
-
-2D視点、3D視点、ボス戦などの処理を、それぞれ別のクラスに分けました。
-
-#### 結果
-
-カメラ本体の肥大化を防ぎ、視点ごとの処理を個別に修正しやすくなりました。
-
-また、ボス戦専用カメラを追加する際も、既存の2D / 3Dカメラ処理への影響を抑えやすくなりました。
+2D視点、3D視点、ボス戦用のカメラはそれぞれ処理が異なります。
+したがいまして、1つのクラスに全ての処理を書いてしまうと、クラスの肥大化を引き起こしてしまいます。 
+そこで、クラスの振る舞いを切り替えるStrategyPatternに着目し、
+2Dカメラクラス、3Dカメラクラスを切り替えて運用しています。　
+これにより、片方のカメラを修正しても双方に影響が出ず、運用やメンテナンスが楽になりました。
 
 ---
 
 ### Factory Patternによる敵生成処理
-<img src="Portfolio_Sprite/FactoryPattern_Result.png">
-<img src="Portfolio_Sprite/EnemyFactory.png" width="100%" alt="Factory Patternによる敵生成処理の構成図">
+<p class="media-wrap">
+  <img class="diagram-image" src="Portfolio_Sprite/FactoryPattern_Result.png" alt="Factory Patternによる敵生成処理の改善結果">
+</p>
 
-#### 課題
-
-敵の種類が増えるたびに、ステージクラス内のswitch文や生成処理が増えていました。
-
-その結果、ステージクラスが敵の詳細な生成処理まで持つ状態になっていました。
-
-これにより、ステージクラスの責務が大きくなり、処理の見通しが悪くなっていました。
-
-#### 工夫した点
-
-Factory Patternを用いて、敵の生成処理をEnemyFactoryに分離しました。
-
-ステージ側では、敵の種類と生成座標を指定するだけで敵を生成できるようにしています。
-
-ステージ側が具体的な敵クラスを直接扱わない構成にしました。
-
-#### 結果
-
-ステージ側は「どの敵をどこに配置するか」に集中できるようになりました。
-
-敵の種類を追加する際も、修正箇所を限定しやすくなりました。
+敵の生成処理はステージクラスが直接生成を行わないようにしています。
+また、ステージ側では敵の種類と生成座標を指定するだけとし、
+敵ごとの生成処理はFactoryクラスで管理を行っています。
+これにより敵を追加する際もステージクラスの負担を減らし、配置と生成の責務を分けることができました。
 
 ---
 
 ### State Patternによる状態管理
-<img src="Portfolio_Sprite/StatePattern_Result.png">
-<img src="Portfolio_Sprite/StatePattern.png" width="100%" alt="State Patternによる状態管理の構成図">
+<p class="media-wrap">
+  <img class="diagram-image" src="Portfolio_Sprite/StatePattern_Result.png" alt="State Patternによる状態管理の改善結果">
+</p>
 
-#### 課題
-
-PlayerやEnemyは、待機、移動、ジャンプ、攻撃、被弾など複数の状態を持ちます。
-
-これらを1つのクラス内で条件分岐だけで管理すると、処理が複雑になります。
-
-その結果、デバッグや機能追加が難しくなる問題がありました。
-
-#### 工夫した点
-
-State Patternを用いて、状態ごとの処理を分離しました。
-
-PlayerやEnemy本体は現在の状態を管理します。
-
-具体的な振る舞いは、各Stateクラスに委譲する構成にしています。
-
-#### 結果
-
-状態ごとの処理を確認しやすくなりました。
-
-また、新しい行動を追加する際も、既存処理への影響を抑えやすくなりました。
+PlayerやEnemty/Bossの行動処理はステートクラスとして分離を行っています。
+本体のクラスは現在の状態を管理し、各ステートクラスはその動きのみをもつ構成となっています。
+これにより、メンテナンスを行う際、状態を確認しやすく、追加実装の際も影響範囲を抑えることができました。
 
 ---
 
 ## 操作方法
 
-<img src="Portfolio_Sprite/howToPlay.png" width="100%" alt="操作説明">
+<p class="media-wrap">
+  <img class="control-image" src="Portfolio_Sprite/howToPlay.png" alt="操作説明">
+</p>
 
 本作品はXbox系コントローラーでのプレイを推奨しています。
 
@@ -265,9 +237,9 @@ PlayerやEnemy本体は現在の状態を管理します。
 
 1. タイトル画面で GameStart を選択
 2. ステージ選択画面へ進む
-3. NormalStageを選択
+3. TutorialStageを選択
 4. 2D / 3D視点切り替えを使った攻略要素を確認
-5. 余裕があれば TutorialStage と BossStage も確認
+5. 余裕があれば NormalStage と BossStage も確認
 
 ---
 
@@ -280,7 +252,7 @@ PlayerやEnemy本体は現在の状態を管理します。
 | 推奨操作 | Xbox系コントローラー |
 | キーボード操作 | 対応 |
 | 確認してほしいステージ | TutorialStage |
-| 余裕があれば| BossStage
+| 余裕があれば | BossStage |
 | 既知の不具合 | 提出時点で把握している進行不能の既知不具合はありません |
 
 ---
@@ -302,8 +274,8 @@ PlayerやEnemy本体は現在の状態を管理します。
 | Portfolio | [DimensionFlip Portfolio](https://yamaguchihayato.github.io/DimensionFlip-Portfolio.github.io/) |
 | ROM | [ダウンロードはこちら](https://drive.google.com/file/d/1wA01RpSKpDIp1yL_sSOlJwel9cVUqhps/view?usp=drive_link) |
 | 過去作品（チーム制作） | [過去作品動画はこちら](https://youtu.be/8DWuriwGJ-k?si=JC8OAdokIJmdOh5m) |
-| 開発中タイトル(GitHub)| [GitHubはこちら](https://github.com/YamaguchiHayato/Project-E.H_MyStorage)
-| 開発中タイトル(Portfolio)| [Portfolioはこちら](https://github.com/YamaguchiHayato/ProjectE.H-Portfolio-Home)
+| 開発中タイトル(GitHub) | [GitHubはこちら](https://github.com/YamaguchiHayato/Project-E.H_MyStorage) |
+| 開発中タイトル(Portfolio) | [Portfolioはこちら](https://github.com/YamaguchiHayato/ProjectE.H-Portfolio-Home) |
 
 ---
 
