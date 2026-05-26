@@ -4,7 +4,7 @@
 
 **2D視点と3D視点を切り替え、見え方の違いを使って攻略するアクションゲーム**
 
-<p class="media-wrap">
+<p align="center">
   <a href="Portfolio_Gif/titleAction_ver20260304.gif" target="_blank">
     <img class="title-image" src="Portfolio_Gif/titleAction_ver20260304.gif" alt="DimensionFlip タイトル画面">
   </a>
@@ -71,7 +71,7 @@ C++を用いたゲーム制作で、ゲームの仕組みを支える実装を�
 ---
 
 ### どんなゲームか
-<p class="media-wrap">
+<p align="center">
   <img class="portfolio-image" src="Portfolio_Sprite/View2Dor3D.png" alt="視点の見え方の違い">
 </p>
 
@@ -86,7 +86,7 @@ DimensionFlipは、2D視点と3D視点を切り替えながら進むアクショ
 ---
 
 ### 何が面白いか
-<p class="media-wrap">
+<p align="center">
   <img class="portfolio-image" src="Portfolio_Sprite/howToPlayGame.png" alt="ゲームの遊び方の流れ">
 </p>
 
@@ -104,7 +104,7 @@ DimensionFlipは、2D視点と3D視点を切り替えながら進むアクショ
 
 ### 2D / 3D視点切り替えを使ったステージ進行
 
-<p class="media-wrap">
+<p align="center">
   <img class="portfolio-image" src="Portfolio_Gif/Tutorial.gif" alt="2D / 3D視点切り替えを使ったステージ進行">
 </p>
 
@@ -114,7 +114,7 @@ DimensionFlipは、2D視点と3D視点を切り替えながら進むアクショ
 
 ### タイトル画面からステージ選択まで
 
-<p class="media-wrap">
+<p align="center">
   <video class="portfolio-video" src="./Portfolio_Video/titleAction_StageSelectScene.mp4" controls></video>
 </p>
 
@@ -124,7 +124,7 @@ GameStartを選択するとステージ選択画面に進みます。
 
 ### TutorialStage
 
-<p class="media-wrap">
+<p align="center">
   <video class="portfolio-video" src="./Portfolio_Video/PlayTutorialStage.mp4" controls></video>
 </p>
 
@@ -134,7 +134,7 @@ TutorialStageでは、移動、ジャンプ、視点切り替えなどを確認�
 
 ### NormalStage
 
-<p class="media-wrap">
+<p align="center">
   <img class="portfolio-image" src="Portfolio_Sprite/StageSelectScene.png" alt="ステージ選択画面">
 </p>
 
@@ -146,7 +146,7 @@ NormalStageでは、2D / 3D視点切り替えを使いながらステージを�
 
 ### BossStage
 
-<p class="media-wrap">
+<p align="center">
   <img class="portfolio-image" src="Portfolio_Gif/BossCutIn.gif" alt="ボス登場カットイン">
 </p>
 
@@ -188,7 +188,7 @@ https://youtu.be/FVOEsfokTfM?si=_2CNayQ2Ri96qFfP
 ---
 
 ### Strategy Patternによるカメラ制御
-<p class="media-wrap">
+<p align="center">
   <img class="diagram-image" src="Portfolio_Sprite/StrategyPattern_Result.png" alt="Strategy Patternによるカメラ制御の改善結果">
 </p>
 
@@ -201,8 +201,8 @@ https://youtu.be/FVOEsfokTfM?si=_2CNayQ2Ri96qFfP
 ---
 
 ### Factory Patternによる敵生成処理
-<p class="media-wrap">
-  <img class="diagram-image" src="Portfolio_Sprite/FactoryPattern_Result.png" alt="Factory Patternによる敵生成処理の改善結果">
+<p align="center">
+  <img class="diagram-image" src="Portfolio_Sprite/FactoryPattern_Result.png" alt="Factory Patternによる敵生成処理の改善結果"
 </p>
 
 敵の生成処理はステージクラスが直接生成を行わないようにしています。
@@ -213,8 +213,8 @@ https://youtu.be/FVOEsfokTfM?si=_2CNayQ2Ri96qFfP
 ---
 
 ### State Patternによる状態管理
-<p class="media-wrap">
-  <img class="diagram-image" src="Portfolio_Sprite/StatePattern_Result.png" alt="State Patternによる状態管理の改善結果">
+<p align="center">
+  <img class="diagram-image" src="Portfolio_Sprite/StatePattern_Result.png" alt="State Patternによる状態管理の改善結果"
 </p>
 
 PlayerやEnemty/Bossの行動処理はステートクラスとして分離を行っています。
@@ -225,7 +225,7 @@ PlayerやEnemty/Bossの行動処理はステートクラスとして分離を行
 
 ## 操作方法
 
-<p class="media-wrap">
+<p align="center">
   <img class="control-image" src="Portfolio_Sprite/howToPlay.png" alt="操作説明">
 </p>
 
